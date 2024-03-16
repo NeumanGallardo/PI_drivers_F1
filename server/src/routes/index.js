@@ -1,5 +1,9 @@
-const { Router } = require("express");
+const express = require("express");
+const router = express.Router();
 
-const router = Router();
+const getDrivers = require('../controllers/getDrivers');
+
+
+router.get('/drivers_F1',getDrivers);
 
 module.exports = router;
