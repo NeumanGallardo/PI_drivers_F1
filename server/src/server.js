@@ -11,6 +11,4 @@ server.use(cors());
 
 server.use(router); 
 
-console.log('estoy func');
-
 module.exports = server;
