@@ -6,11 +6,12 @@ const response = await   axios(`${URL}`)
 const drivers = [];
 for(let i=0;i<response.data.length;i++)
 {const name = response.data[i].name.forename;
+const lastName = response.data[i].name.surname;
 const { id, nationality, teams} = response.data[i];
 let image = response.data[i].image.url;
 if(!image)
 {image = "https://cdn-4.motorsport.com/images/mgl/2Gzrxzo0/s700/sergio-perez-red-bull-racing-1.jpg";}
-const driver ={id, name, nationality, teams, image};
+const driver ={id, name, lastName, nationality, teams, image};
 drivers.push(driver);
 }
 
