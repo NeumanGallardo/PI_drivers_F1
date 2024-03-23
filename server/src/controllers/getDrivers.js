@@ -4,7 +4,6 @@ const getDrivers = async (req, res)=>{
 try{
 const response = await   axios(`${URL}`)
 const drivers = [];
-
 for(let i=0;i<response.data.length;i++)
 {const name = response.data[i].name.forename;
 const { id, nationality, teams} = response.data[i];

@@ -5,7 +5,7 @@ module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('Driver', {
       id:{type: DataTypes.INTEGER, primaryKey: true, allowNull: false,
-      },
+    autoIncrement: true  },
     forename: {type: DataTypes.STRING, allowNull: false},
     surname: {type: DataTypes.STRING, allowNull: false},
     description: {type: DataTypes.STRING, allowNull: false},
@@ -14,17 +14,3 @@ module.exports = (sequelize) => {
     dob:{type: DataTypes.DATE, allowNull: false}
   }, {timestamps: false});
 };
-
-sequelize.sync()
-  .then(() => {
-    console.log('Modelos sincronizados correctamente.');
-    
-    // Establecer el valor inicial de autoincrement
-    return sequelize.query("ALTER TABLE Drivers AUTO_INCREMENT = 509");
-  })
-  .then(() => {
-    console.log('Valor inicial de autoincrement establecido correctamente.');
-  })
-  .catch(err => {
-    console.error('Error al sincronizar modelos:', err);
-  });
