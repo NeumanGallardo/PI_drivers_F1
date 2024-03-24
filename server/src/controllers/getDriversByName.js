@@ -2,19 +2,20 @@ const axios = require('axios');
 const URL='http://localhost:3001/drivers_F1/';
 const getDriversByName = async(req, res)=>{
 try{
-const {name}=req.params;
+const {name}=req.query;
 console.log(name);
 const response = await   axios(`${URL}`);
-const drivers =[];
-console.log(response.data[0]);
+let drivers=[];
 for(let i=0;i<response.data.length;i++)
-{if(name===response.data[i].name)
+{if(name.toLowerCase()===response.data[i].name.toLowerCase())
 {let driver = response.data[i];
-drivers.push(driver);
+drivers.push(driver);}
 }
-if(drivers.length<15)
+if(drivers.length===15)
 {return res.json(drivers);}
-}
+if(drivers.length===0)
+{drivers='driver no encontrado';}
+
 return res.json(drivers);
 }
 catch(error){
