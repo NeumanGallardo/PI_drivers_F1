@@ -1,5 +1,5 @@
 const axios = require('axios');
-const URL = 'http://localhost:3001/drivers_F1';
+const URL = 'http://localhost:5000/drivers';
 const {Team} = require('../db');
 const getTeams = async(req, res)=>{
 try{
@@ -7,6 +7,7 @@ const response = await axios(`${URL}`);
 let teams =[];
 for(let i=0;i<response.data.length;i++)
 {teams.push(response.data[i].teams);}
+
 teams = teams.join('');
 teams = teams.split(',');
 teams = teams.filter((elemento, indice) => {
@@ -14,9 +15,10 @@ teams = teams.filter((elemento, indice) => {
 });
 //cargar la db en primera instancia si esta vacia
 let cont = await Team.count();
+console.log(cont);
 if(cont===0)
 {postTeams(teams,res);}
-
+console.log(teams);
 return res.json(teams);
 }
 catch(error){

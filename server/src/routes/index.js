@@ -11,6 +11,6 @@ router.get('/drivers_F1',getDrivers);
 router.get('/drivers_F1/:id',getDriverById);
 router.get('/drivers_F1_name',getDriversByName);
 router.post('/drivers_F1',postDriver);
-router.get('/drivers_F1/teams',getTeams);
+router.get('/drivers_F1_teams',getTeams);
 
 module.exports = router;
