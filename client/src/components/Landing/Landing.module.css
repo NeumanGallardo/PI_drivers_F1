@@ -1,0 +1,33 @@
+.background {
+    background-image: url("https://areaxbox.com/wp-content/uploads/2024/02/F1-24.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 85vw;
+    height: 85vh;
+  }
+
+  .titulo {
+    font-family: 'Arial', sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ff4500;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    border-radius: 5px;
+    background-image: linear-gradient(45deg, #bc28ae, #ae00ff);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .button {
+    padding: 20px 30px; /* Espacio interno del botón */
+    font-size: 20px; /* Tamaño de la fuente */
+    font-weight: bold; /* Peso de la fuente */
+    border: none; /* Sin borde */
+    border-radius: 20px; /* Bordes redondeados */
+    color: antiquewhite;
+    background-color: #bc63d7; /* Color de fondo */
+align-content: flex-end;
+  }
+
+  
