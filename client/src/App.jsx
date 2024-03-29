@@ -4,22 +4,18 @@ import axios from 'axios';
 import Landing from './components/Landing';
 import Cards from './components/Cards';
 import NavBar from './components/NavBar';
+import Form from './components/Form';
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-const navigate = useNavigate();
-const landing = ()=>{
-  navigate('/landing');
-}
-
 //crando estado local
 const [characters, setCharacters]=useState([]);
 const location=useLocation();
 
 //se guarda por referencia                                                     
-async function onSearch(){
+async function drivers(){
    //llamada a la API
    try {
       const response = await axios.get(`http://localhost:3001/drivers_F1`);
@@ -33,10 +29,13 @@ async function onSearch(){
 
   return (
 <div>
-  {location.path === '/' && <Landing/>}
+{location.pathname !== '/landing' && location.pathname !== '/'  && <NavBar/>}
+{location.pathname === '/' && <Landing/>}
 <Routes>
   <Route path='/landing' element={<Landing/>}/>
-  <Route path='/home' element={<NavBar/>}/>
+  <Route path='/home' element={<Cards drivers={drivers}/>}/>
+  <Route path='/form' element={<Form/>}/>
+
 </Routes>
 </div>
   );
