@@ -5,6 +5,10 @@ export default function NavBar({onSearch}){
 <nav>
 <Link className={style.link} to='/home'><h2>Home</h2></Link>
 <Link className={style.link} to='/form'><h2>Crear Driver</h2></Link>
+<form>
+<input placeholder="Buscar"/>
+<button>Buscar</button>
+</form>
 </nav>
     </header>
     </>

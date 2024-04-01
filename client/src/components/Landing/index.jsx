@@ -11,7 +11,6 @@ function Landing() {
 
    return (
       <div className={style.background}>
-      <br/>
 <h1 className={style.titulo}>FORMULA 1</h1>
 <button className={style.button} onClick={redirigirARuta}>Ir a Home</button>
       </div>

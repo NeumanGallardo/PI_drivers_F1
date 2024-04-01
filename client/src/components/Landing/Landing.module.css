@@ -27,7 +27,8 @@
     border-radius: 20px; /* Bordes redondeados */
     color: antiquewhite;
     background-color: #bc63d7; /* Color de fondo */
-align-content: flex-end;
+
+margin-right: auto;
   }
 
   

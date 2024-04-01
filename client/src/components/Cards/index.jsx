@@ -1,20 +1,24 @@
 import React from 'react';
 import Card from '../Card/index';
 import style from './Cards.module.css';
-const Cards = ({drivers})=>{return(
-<div>{drivers.map((item)=>{   
+const Cards = ({characters})=>{
+   return(
+<div className={style.cards}> {/* {characters.map((item)=>{   
    return (
    <div className={style.container}key={item.id}>
       <Card
       image={item.image}
       name={item.name}
-      teams={item.tams}
+      teams={item.teams}
       />
-      <p>hola soy cards</p>
    </div>
    );
    }
-   )}
+   )} */}
+<Card/>
+<Card/>
+<Card/>
+<Card/>
 </div>
 );
 };

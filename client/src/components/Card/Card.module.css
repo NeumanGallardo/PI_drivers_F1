@@ -1,0 +1,24 @@
+.card {
+    display: flex;
+    flex-direction: column;
+
+    color: rgb(135, 67, 194);
+    border-radius: 30px;
+    background-color: rgb(82, 179, 129);
+    padding: 10px;
+    margin: 10px;
+    position: relative;
+}
+
+.card:hover{cursor: pointer;
+    transition: 3s;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    transition: box-shadow 1s, transform 1s;
+    background-color: rgb(34, 190, 81);}
+     
+.card img {
+        width: 100%;
+        border-radius: 30px;
+        margin-bottom: 10px;
+      }  
