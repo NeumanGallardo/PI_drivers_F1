@@ -18,6 +18,7 @@ function App() {
 <Routes>
   <Route path='/' element={<Landing/>}/>
   <Route path='/home' element={<Home/>}/>
+  <Route path='/home:id' />
   <Route path='/form' element={<Form/>}/>
 </Routes>
 </div>

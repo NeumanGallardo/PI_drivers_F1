@@ -1,24 +1,12 @@
 import React from 'react';
 import Card from '../Card/index';
 import style from './Cards.module.css';
-const Cards = ({characters})=>{
+const Cards = ({allDrivers})=>{
+   const driversList = allDrivers;
    return(
-<div className={style.cards}> {/* {characters.map((item)=>{   
-   return (
-   <div className={style.container}key={item.id}>
-      <Card
-      image={item.image}
-      name={item.name}
-      teams={item.teams}
-      />
-   </div>
-   );
-   }
-   )} */}
-<Card/>
-<Card/>
-<Card/>
-<Card/>
+<div className={style.cards}> 
+{driversList?.map((item)=>{ return(<div key={item.id}><Card name={item.name} 
+image={item.image} teams={item.teams}/></div>)})}
 </div>
 );
 };

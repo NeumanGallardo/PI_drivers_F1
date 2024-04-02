@@ -6,9 +6,8 @@ function Card(props) {
    return (
    <div className={style.card}>
 <img src={props.image} alt='foto'/>
-   {/* <Link to={`/detail/${props.id}`} ><h3 className="card-name">{props.name}</h3></Link> */}
-    <h2>{props.teams}</h2> 
-    <p>hola soy card</p>
+   <Link to={`home/${props.id}`} ><h3 className="card-name">{props.name}</h3></Link>
+    <p>{props.teams}</p> 
     </div>
    );
 }

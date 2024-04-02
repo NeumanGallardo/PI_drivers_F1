@@ -8,17 +8,24 @@
     padding: 10px;
     margin: 10px;
     position: relative;
+
+    width: 300px;
 }
 
 .card:hover{cursor: pointer;
     transition: 3s;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(214, 128, 90, 0.2);
+    transform: scale(1.06);
     transition: box-shadow 1s, transform 1s;
-    background-color: rgb(34, 190, 81);}
+    background-color: rgb(47, 163, 82);}
      
 .card img {
-        width: 100%;
+        width: 300px;
+        height: 300px;
         border-radius: 30px;
         margin-bottom: 10px;
-      }  
+      } 
+     p {
+        font-size: 16px;
+        font-family: Arial, Helvetica, sans-serif;
+     } 
