@@ -4,9 +4,9 @@ const getDriverById = async (req, res)=>{
 const {id}=req.params;
 try{
 const response = await   axios(`${URL}`)
-let driver=response.data[id-1];
+let driver=[response.data[id-1]];
 if(response.data.length<id)
-{driver = 'driver no existe';}
+{driver =[];}
 return res.json(driver);
 }
 catch(error){

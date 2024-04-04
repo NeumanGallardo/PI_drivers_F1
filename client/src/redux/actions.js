@@ -25,11 +25,10 @@ export const getDrivers = () => {
 
 
 export const getById = (id) => {
-   console.log(id);
    return async function (dispatch) {
      const response =await axios(`http://localhost:3001/drivers_F1/${id}`);
          return dispatch({
-            type: GET_BY_NAME,
+            type: GET_BY_ID,
             payload: response.data,
          });
    };

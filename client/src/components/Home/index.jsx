@@ -18,11 +18,13 @@ setSearchString(event.target.value);}
 
 function handleSubmit(event) {
   event.preventDefault();
-  if (typeof searchString === 'string')
-  {dispatch(getByName(searchString));}
-  if (typeof searchString === 'number')
-  { console.log(searchString);
-    dispatch(getById(searchString));}
+  const id = parseInt(searchString, 10);
+  if ( isNaN(id))
+  dispatch(getByName(searchString));
+  else{if (searchString > 0) 
+    dispatch(getById(searchString));
+    else
+    dispatch(getByName(searchString));}
 }
 
 useEffect(()=>{
