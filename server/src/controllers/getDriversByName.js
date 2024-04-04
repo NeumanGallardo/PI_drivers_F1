@@ -14,8 +14,8 @@ if(drivers.length===15)
 {return res.json(drivers);}
 }
 
-if(drivers.length===0)
-{drivers='driver no encontrado';}
+//if(drivers.length===0)
+//{drivers=[];}
 
 return res.json(drivers);
 }

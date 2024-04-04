@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { getByName, getDrivers } from "../../redux/actions";
+import { getById, getByName, getDrivers } from "../../redux/actions";
 
 import Cards from "../Cards";
 import NavBar from "../NavBar";
@@ -18,7 +18,11 @@ setSearchString(event.target.value);}
 
 function handleSubmit(event) {
   event.preventDefault();
-  dispatch(getByName(searchString));  
+  if (typeof searchString === 'string')
+  {dispatch(getByName(searchString));}
+  if (typeof searchString === 'number')
+  { console.log(searchString);
+    dispatch(getById(searchString));}
 }
 
 useEffect(()=>{
@@ -27,7 +31,6 @@ useEffect(()=>{
 
 return (
     <div className={style.home}>
-        <h2 className={style.titulo}>HOME</h2>
         <NavBar handleChange={handleChange} handleSubmit={handleSubmit}/>
         <Cards allDrivers={allDrivers}/>
     </div>
