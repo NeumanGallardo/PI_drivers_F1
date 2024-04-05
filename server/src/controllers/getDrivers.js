@@ -8,11 +8,11 @@ let drivers = [];
 for(let i=0;i<response.data.length;i++)
 {let name = response.data[i].name.forename;
 let lastName = response.data[i].name.surname;
-let { id, nationality, teams} = response.data[i];
+let { id, nationality, teams, dob, description} = response.data[i];
 let image = response.data[i].image.url;
 if(!image)
 {image = "https://cdn-4.motorsport.com/images/mgl/2Gzrxzo0/s700/sergio-perez-red-bull-racing-1.jpg";}
-const driver ={id, name, lastName, nationality, teams, image};
+const driver ={id, name, lastName, nationality, teams, image, dob, description};
 drivers.push(driver);
 }
 //importando datos de la DB

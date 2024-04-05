@@ -6,6 +6,7 @@ import Home from './components/Home';
 import Cards from './components/Cards';
 import NavBar from './components/NavBar';
 import Form from './components/Form';
+import Detail from './components/Detail';
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -18,7 +19,7 @@ function App() {
 <Routes>
   <Route path='/' element={<Landing/>}/>
   <Route path='/home' element={<Home/>}/>
-  <Route path='/home:id' />
+  <Route path='/detail/:detailId' element={<Detail />}/>
   <Route path='/form' element={<Form/>}/>
 </Routes>
 </div>
