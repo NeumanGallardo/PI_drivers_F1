@@ -15,10 +15,8 @@ teams = teams.filter((elemento, indice) => {
 });
 //cargar la db en primera instancia si esta vacia
 let cont = await Team.count();
-console.log(cont);
 if(cont===0)
 {postTeams(teams,res);}
-console.log(teams);
 return res.json(teams);
 }
 catch(error){
