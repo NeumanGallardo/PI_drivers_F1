@@ -13,11 +13,29 @@ teams = teams.split(',');
 teams = teams.filter((elemento, indice) => {
     return teams.indexOf(elemento) === indice;
 });
+//ordenar teams alfabeticamente
+teams = teams.slice().sort((a, b) => {
+    const nombreA = a.toLowerCase(); 
+    const nombreB = b.toLowerCase();
+    if (nombreA < nombreB) {
+        return -1;
+    }
+    if (nombreA > nombreB) {
+        return 1;
+    }
+    return 0; // Si los nombres son iguales
+ });
+ 
 //cargar la db en primera instancia si esta vacia
 let cont = await Team.count();
 if(cont===0)
-{postTeams(teams,res);}
-return res.json(teams);
+{postTeams(teams,res);
+console.log('db cargado');}
+//importar teams de DB
+let teamsDB=[];
+teamsDB = await Team.findAll();
+
+return res.json(teamsDB);
 }
 catch(error){
 return res.status(500).json({message: error.message});
