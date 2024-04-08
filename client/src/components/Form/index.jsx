@@ -43,7 +43,7 @@ function Form(){
       ]
 
 const [DB, setDB] = useState([]);
-const [opSelec, setOpSelec] = useState([]);
+const [opSelecTeams, setOpSelecTeams] = useState([]);
 const [opNat,setOpNat] = useState([]);
 
 const [newDriver,setNewDriver]=useState({});
@@ -65,43 +65,62 @@ getDB();
     event.preventDefault();
     const name = Array.from(event.target.selectedOptions, (option) =>option.value);
     const id = Array.from(event.target.selectedOptions, (option) =>option.id);
-    console.log(name, id);
     let obj = {name:name[0],id:id[0]}
-    console.log(obj);
-    setOpSelec(obj);
-    console.log(opSelec);
-//let team = opSelec[0];
-
+    setOpSelecTeams([...opSelecTeams, obj]);
   };
 
     // Manejar el cambio de las opciones seleccionadas nationality
     const handleNatChange = (event) => {
+        event.preventDefault();
         const opNat = Array.from(event.target.selectedOptions, (option) => option.value);
         setOpNat(opNat);
         const atrNat = opNat[0];
        setNewDriver({...newDriver, nationality:atrNat});
        setErrors(validation({...newDriver,nationality: atrNat}))
       };
-
+//manejador del estado principal new Driver
   function handleChange(event){
+    event.preventDefault();
     setErrors(validation({...newDriver,[event.target.name] : event.target.value
         })
     );
 setNewDriver({...newDriver,[event.target.name]:event.target.value});
 }
-
+//manejar la imagen
 const [imagenURL, setImagenURL] = useState('');
 
 const handleImagenSeleccionada = (event) => {
+    event.preventDefault();
 const image = event.target.value;
 setImagenURL(image);
-const atr = imagenURL
 setNewDriver({...newDriver, image:image});
 setErrors(validation({...newDriver,image: image}))
 };
 
+//submit
+const handleSubmit=(event)=>{
+    event.preventDefault();
+    postNewDriver(newDriver, opSelecTeams);
+};
+//post del nuevo driver
+
+const postNewDriver = async () => {
+    try {
+      const datos = {
+        newDriver: newDriver,
+        opSelecTeams: opSelecTeams
+      };
+  
+      const response = await axios.post(`http://localhost:3001/drivers_F1/`, datos);
+  console.log('Respuesta del servidor:', response.data);
+      window.alert(response.data);
+    } catch (error) {
+      window.alert('Error datos no registrados', error.message);
+    }
+  };
+
 return <><NavBar/>
-<form>
+<form onSubmit={handleSubmit}>
     <label>Nombre: </label> 
     <input type="text" name='name' value={newDriver.name} onChange={handleChange}/>
     {errors.name!==''&&<p>{errors.name}</p>}
@@ -125,7 +144,7 @@ return <><NavBar/>
     {imagenURL && <img src={imagenURL} alt="Vista previa de la imagen" 
     style={{ maxWidth: '300px', maxHeight: '300px' }} />}
     {errors.image!==''&&<p>{errors.image}</p>}
-     {console.log(newDriver)}
+     {console.log('Driver',newDriver)}
 
     <label>Fecha de nacimiento: </label> <input type="date" name='dob'
      value={newDriver.dob} onChange={handleChange}/>
@@ -136,7 +155,7 @@ return <><NavBar/>
     {errors.description!==''&&<p>{errors.description}</p>}
 
     <label>Teams: </label> 
-    <select multiple name="teams" value={opSelec} onChange={handleTeamChange}>
+    <select multiple name="teams" value={opSelecTeams} onChange={handleTeamChange}>
     {DB.map((objeto) => (
           <option key={objeto.id} value={objeto.name} id={objeto.id}>
             {objeto.name}
@@ -145,14 +164,15 @@ return <><NavBar/>
     </select>
 
     <div>
-        <h2>Opciones seleccionadas:</h2>
-        <ul>
-          {opSelec.map((opcion) => (
-            <li key={opcion.id}>{opcion.name}</li>
+        <h3>Opciones seleccionadas:</h3>
+        
+           {opSelecTeams.map((opcion) => (
+            <p key={opcion.id}>{opcion.name}</p>
           ))}
-        </ul>
+          {console.log('Teams',opSelecTeams)} 
+       
       </div>
-
+      <button type="submit">Registrar Driver</button>
 </form></>
  };
 export default Form;
