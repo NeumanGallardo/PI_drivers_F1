@@ -33,10 +33,10 @@ const getDrivesDB =async ()=>{
 const DB = await Driver.findAll();
 for(let i=0; i<DB.length;i++)
     {
-    let {id, name, lastName, nationality, image}=DB[i];
+    let {id, name, lastName, nationality, image, description}=DB[i];
     if(!image)
 {image = "https://cdn-4.motorsport.com/images/mgl/2Gzrxzo0/s700/sergio-perez-red-bull-racing-1.jpg";}
-    let driverDB = {id, name, lastName, nationality, image};
+    let driverDB = {id, name, lastName, nationality, image, description};
     driversDB.push(driverDB);
     }
     return driversDB;
