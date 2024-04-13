@@ -2,6 +2,7 @@ export default function validation(inputs){
     const errors = {};
     const regexName = /^[a-zA-ZñÑáéíóúÁÉÍÓÚ]+$/i;
     const regexNumber =  /^(?:[0-9]+[a-z]|[a-z]+[0-9])[a-z0-9]*$/i;
+    const regex3 = /.{3,}/;
 
             //validacion name
             if (!regexName.test(inputs.name)) {
@@ -9,7 +10,7 @@ export default function validation(inputs){
             }
             if (!inputs.name) {
                errors.name = 'El nombre no puede estar vacio'}
-           if (inputs.name.length < 3) {
+           if (!regex3.test(inputs.name)) {
               errors.name = 'Debe tener mas de 3 caracteres'}
 //validation lastName
             if (!regexName.test(inputs.lastName)) {
@@ -17,8 +18,8 @@ export default function validation(inputs){
             }
             if (!inputs.lastName) {
                errors.lastName = 'El apellido no puede estar vacio'}
-            //if (inputs.lastName.length < 3) {
-              //  errors.lastName = 'Debe tener mas de 3 caracteres'}
+               if (!regex3.test(inputs.lastName)) {
+                errors.lastName = 'Debe tener mas de 3 caracteres'}
             
             
             //validacion de imagen
@@ -46,8 +47,11 @@ if(!regexMasDeTresPalabras.test(inputs.description))
 {errors.description = 'La descripcion debe ser mas de tres palabras';}
 
 //validation teams
-if(!inputs.teams)
-{errors.teams = 'Selecccione  un team';}
+const cadenaJSON = JSON.stringify(inputs.teams);
+//const regexJSON = k;
+
+//if(Array.isArray(inputs.teams) && !inputs.teams[0])
+//{errors.teams = 'Selecccione  un team o mas...';}
 
 return errors;
         }

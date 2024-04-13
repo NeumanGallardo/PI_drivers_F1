@@ -50,7 +50,7 @@ const Cards = ({allDrivers})=>{
 image={item.image} teams={item.teams}/></div>)})}
 
       {/* Controles de paginación */}
-{allDrivers.length>9 && (<div>
+{allDrivers.length>9 && (<div className={style.footer}>
    <button onClick={prevPage} disabled={currentPage === 1}>Anterior</button>
    <span>  Página {currentPage} de {totalPages}  </span>
    <button onClick={nextPage} disabled={indexOfLastItem >= allDrivers.length}>Siguiente</button>

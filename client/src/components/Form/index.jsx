@@ -2,6 +2,7 @@ import {React, useState, useEffect} from "react";
 import axios from "axios";
 import validation from '../../validation/Validation';
 import NavBar from "../NavBar";
+import style from './Form.module.css';
 function Form(){
 
   const arrayNationality = [
@@ -43,15 +44,15 @@ function Form(){
       ]
 
 const [DB, setDB] = useState([]);
-const [opSelecTeams, setOpSelecTeams] = useState([]);
-const [opNat,setOpNat] = useState([]);
 
+const [opNat,setOpNat] = useState([]);
+const [opSelecTeams, setOpSelecTeams] = useState([]);
 const [newDriver,setNewDriver]=useState({});
 const [errors,setErrors]=useState({});
 
 useEffect(() => {
     async function getDB()
-    {
+    {  
     try{
         const response = await axios(`http://localhost:3001/drivers_F1_teams`);
         setDB(response.data);
@@ -67,6 +68,7 @@ getDB();
     const id = Array.from(event.target.selectedOptions, (option) =>option.id);
     let obj = {name:name[0],id:id[0]}
     setOpSelecTeams([...opSelecTeams, obj]);
+    setErrors(validation({...newDriver,teams: opSelecTeams}))
   };
 
     // Manejar el cambio de las opciones seleccionadas nationality
@@ -121,13 +123,13 @@ const postNewDriver = async () => {
 
 return <><NavBar/>
 <form onSubmit={handleSubmit}>
-    <label>Nombre: </label> 
+   <label className={style.label}>Nombre: </label> 
     <input type="text" name='name' value={newDriver.name} onChange={handleChange}/>
-    {errors.name!==''&&<p>{errors.name}</p>}
+    {errors.name!==''&&<p className={style.p}>{errors.name}</p>}
 
     <label>Apellido: </label>
     <input type="text" name='lastName' value={newDriver.lastName} onChange={handleChange}/>
-    {errors.lastName!==''&&<p>{errors.lastName}</p>}
+    {errors.lastName!==''&&<p className={style.p}>{errors.lastName}</p>}
 
     <label>Nacionalidad: </label> 
     <select value={opNat} onChange={handleNatChange}>
@@ -137,22 +139,22 @@ return <><NavBar/>
           </option>
         ))}
     </select>
-    {errors.nationality!==''&&<p>{errors.nationality}</p>}
+    {errors.nationality!==''&&<p className={style.p}>{errors.nationality}</p>}
 
     <label>Imagen: </label> 
     <input type="text" name='image' value={imagenURL} onChange={handleImagenSeleccionada}/>
     {imagenURL && <img src={imagenURL} alt="Vista previa de la imagen" 
     style={{ maxWidth: '300px', maxHeight: '300px' }} />}
-    {errors.image!==''&&<p>{errors.image}</p>}
+    {errors.image!==''&&<p className={style.p}>{errors.image}</p>}
      {console.log('Driver',newDriver)}
 
     <label>Fecha de nacimiento: </label> <input type="date" name='dob'
      value={newDriver.dob} onChange={handleChange}/>
-     {errors.dob!==''&&<p>{errors.dob}</p>}
+     {errors.dob!==''&&<p className={style.p}>{errors.dob}</p>}
 
     <label>Descripcion: </label> <textarea rows="4" cols='35' name='description'
      value={newDriver.description} onChange={handleChange}/>
-    {errors.description!==''&&<p>{errors.description}</p>}
+    {errors.description!==''&&<p className={style.p}>{errors.description}</p>}
 
     <label>Teams: </label> 
     <select multiple name="teams" value={opSelecTeams} onChange={handleTeamChange}>
@@ -162,7 +164,7 @@ return <><NavBar/>
           </option>
         ))}
     </select>
-
+    {errors.teams!==''&&<p className={style.p}>{errors.teams}</p>}
     <div>
         <h3>Opciones seleccionadas:</h3>
         
@@ -173,7 +175,8 @@ return <><NavBar/>
        
       </div>
       <button type="submit">Registrar Driver</button>
-</form></>
+</form>
+</>
  };
 export default Form;
 

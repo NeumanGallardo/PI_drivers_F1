@@ -2,20 +2,21 @@
     display: flex;
     flex-direction: column;
 
-    color: rgb(135, 67, 194);
+    color: rgb(1, 13, 13);
     border-radius: 30px;
-    background-color: rgb(82, 179, 129);
+    background-color: rgb(49, 188, 82);
     padding: 10px;
     margin: 10px;
     position: relative;
 
     width: 300px;
+    height: 480px;
 }
 
-.card:hover{cursor: pointer;
+.card:hover{
     transition: 3s;
     box-shadow: 0 8px 16px rgba(214, 128, 90, 0.2);
-    transform: scale(1.06);
+    transform: scale(1.07);
     transition: box-shadow 1s, transform 1s;
     background-color: rgb(47, 163, 82);}
      
@@ -24,8 +25,15 @@
         height: 330px;
         border-radius: 30px;
         margin-bottom: 10px;
+        cursor: pointer;
       } 
      p {
         font-size: 16px;
         font-family: Arial, Helvetica, sans-serif;
      } 
+
+     .h3 {
+        color:black;
+        font-size: 20px;
+        cursor: pointer;
+     }

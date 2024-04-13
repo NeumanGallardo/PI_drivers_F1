@@ -763,7 +763,7 @@
         "dob": "1972-03-04",
         "nationality": "Dutch",
         "url": "http://en.wikipedia.org/wiki/Jos_Verstappen",
-        "teams": "Benetton,Simtek,Footwork,Tyrrell,Stewart,Arrows,Minardi"
+        "teams": "Benetton,Simtek,Footwork, Tyrrell,Stewart,Arrows,Minardi"
       },
       {
         "id": 51,
@@ -838,7 +838,7 @@
         "dob": "1964-06-11",
         "nationality": "French",
         "url": "http://en.wikipedia.org/wiki/Jean_Alesi",
-        "teams": "Tyrrell,Ferrari,Benetton,Sauber,Prost,Jordan"
+        "teams": "Tyrrell,Ferrari,Benetton, Sauber,Prost,Jordan"
       },
       {
         "id": 56,
@@ -958,7 +958,7 @@
         "dob": "1966-11-30",
         "nationality": "Finnish",
         "url": "http://en.wikipedia.org/wiki/Mika_Salo",
-        "teams": "Lotus,Tyrrell,Arrows,BAR,Ferrari,Sauber,Toyota"
+        "teams": "Lotus,Tyrrell,Arrows, BAR,Ferrari,Sauber,Toyota"
       },
       {
         "id": 64,
@@ -988,7 +988,7 @@
         "dob": "1964-06-25",
         "nationality": "British",
         "url": "http://en.wikipedia.org/wiki/Johnny_Herbert",
-        "teams": "Benetton,Tyrrell,Lotus,Ligier,Sauber,Stewart,Jaguar"
+        "teams": "Benetton,Tyrrell,Lotus, Ligier,Sauber,Stewart,Jaguar"
       },
       {
         "id": 66,
@@ -1678,7 +1678,7 @@
         "dob": "1959-05-31",
         "nationality": "Italian",
         "url": "http://en.wikipedia.org/wiki/Andrea_de_Cesaris",
-        "teams": "Alfa Romeo, McLaren, Ligier, Minardi, Brabham, Rial, Italia, Jordan, Tyrrell , Sauber",
+        "teams": "Alfa Romeo, McLaren, Brabham, Tyrrell , Sauber",
         "description": "Andrea de Cesaris was an Italian racing driver. He started 208 Formula One Grands Prix but never won. As a result, he holds the record for the most races started without a race victory. A string of accidents early in his career earned him a reputation for being a fast but wild driver. In 2005 and 2006 he competed in the Grand Prix Masters formula for retired F1 drivers. De Cesaris died on 5 October 2014 after losing control of his motorcycle on Rome's Grande Raccordo Anulare motorway."
       },
       {
@@ -3678,7 +3678,7 @@
         "dob": "1945-01-01",
         "nationality": "Belgian",
         "url": "http://en.wikipedia.org/wiki/Jacky_Ickx",
-        "teams": "Cooper , Ferrari , Brabham, McLaren , Williams , Lotus, Wolf–Williams, Ensign, Ligier",
+        "teams": "Ferrari , Brabham, McLaren , Williams, Ensign, Ligier",
         "description": "Jacques Bernard 'Jacky' Ickx is a Belgian former racing driver who won the 24 Hours of Le Mans six times (second-highest of all time) and achieved eight wins and 25 podium finishes in Formula One. He greatly contributed to several World Championships for Makes and World Sports Car championships: Ford (1968), Ferrari (1972), Porsche (1976–1977) and (1982–1985) by his 37 major World Sports Car wins. He also won the Can-Am Championship in 1979 and the 1983 Paris–Dakar Rally. Ickx twice finished as championship runner-up in Formula One, in the consecutive years of 1969 and 1970. He won the majority of his races for Scuderia Ferrari, for which he was the team's leading driver for several seasons in the late 1960s and early 1970s."
       },
       {
@@ -4366,7 +4366,7 @@
         "dob": "1943-07-20",
         "nationality": "New Zealander",
         "url": "http://en.wikipedia.org/wiki/Chris_Amon",
-        "teams": "Reg Parnell, Ian Raby, Cooper, Amon, Ferrari, March, Matra, Tecno, Tyrrell, BRM, Ensign, Wolf-Williams",
+        "teams": "Reg Parnell, Cooper, Amon, Ferrari, Tyrrell, Wolf-Williams",
         "description": "Christopher Arthur Amon MBE was a New Zealand motor racing driver. He was active in Formula One racing in the 1960s and 1970s, and is widely regarded as one of the best F1 drivers never to win a championship Grand Prix. His reputation for bad luck was such that fellow driver Mario Andretti once joked that 'if he became an undertaker, people would stop dying'. Former Ferrari Technical Director Mauro Forghieri stated that Amon was 'by far the best test driver I have ever worked with. He had all the qualities to be a World Champion but bad luck just wouldn't let him be'. Apart from driving, Chris Amon also ran his own Formula One team for a short period in 1974. Away from Formula One, Amon had some success in sports car racing, teaming with co-driver Bruce McLaren to win the 24 Hours of Le Mans race in 1966."
       },
       {
@@ -5470,7 +5470,7 @@
         "dob": "1930-01-31",
         "nationality": "Swedish",
         "url": "http://en.wikipedia.org/wiki/Joakim_Bonnier",
-        "teams": "Maserati, Centro Sud, Bonnier, Maserati, BRM, Porsche, Rob Walker, Lotus, Brabham , Honda",
+        "teams": "Maserati, Maserati, BRM, Porsche, Lotus, Honda",
         "description": "Karl Jockum Jonas 'Joakim' Bonnier (31 January 1930 – 11 June 1972) was a Swedish sportscar racing and Formula One driver who raced for various teams. He was the first Swede to both enter and win a Formula One Grand Prix."
       },
       {
@@ -6226,7 +6226,7 @@
         "dob": "1934-12-25",
         "nationality": "Italian",
         "url": "http://en.wikipedia.org/wiki/Giancarlo_Baghetti",
-        "teams": "Ferrari, Automobili Turismo e Sport, Scuderia Centro Sud, Brabham, Reg Parnell, Lotus",
+        "teams": "Ferrari, Brabham, Reg Parnell, Lotus",
         "description": "Giancarlo Baghetti (25 December 1934 – 27 November 1995) was a Formula One driver who raced for the Ferrari, Automobili Turismo e Sport, BRM, Brabham and Lotus teams. Baghetti is one the only driver to have won his first World Championship race without being the winner in the very first race of its kind, like Nino Farina, who in 1950 won the first F1 World Championship race, the 1950 British Grand Prix. As the Indianapolis 500 was part of the World Championship from 1950 to 1960, but contested by different drivers and cars, the same applies to Johnnie Parsons, who won the 1950 Indianapolis 500, just 17 days after Farina."
       },
       {
@@ -6370,7 +6370,7 @@
         "dob": "1927-04-20",
         "nationality": "American",
         "url": "http://en.wikipedia.org/wiki/Phil_Hill",
-        "teams": "Bonnier, Ferrari, Yeoman, Porsche, ATS, Filipinetti, Cooper, Lotus , McLaren , Eagle",
+        "teams": "Ferrari, Porsche, Cooper, Lotus , McLaren , Eagle",
         "description": "Philip Toll Hill Jr. (April 20, 1927 – August 28, 2008) was an American automobile racing driver. He was one of two American drivers to win the Formula One World Drivers' Championship, and the only one who was born in the United States (the other, Mario Andretti, was born in Italy and later became an American citizen). He also scored three wins at each of the 24 Hours of Le Mans and 12 Hours of Sebring sports car races. Hill was described as a 'thoughtful, gentle man' and once said, ´I'm in the wrong business. I don't want to beat anybody, I don't want to be the big hero. I'm a peace-loving man, basically´"
       },
       {
@@ -6751,7 +6751,7 @@
         "dob": "1917-10-30",
         "nationality": "French",
         "url": "http://en.wikipedia.org/wiki/Maurice_Trintignant",
-        "teams": "Gordini, Rosier, Ferrari, Vanwall, Bugatti, Rob Walker, Centro Sud, BRM, Aston Martin, Serenissima, Reg Parnell",
+        "teams": "Ferrari, Bugatti, Rob Walker, Aston Martin, Reg Parnell",
         "description": "Maurice Bienvenu Jean Paul Trintignant (30 October 1917 – 13 February 2005) was a motor racing driver and vintner from France. He competed in the Formula One World Championship for fourteen years, between 1950 and 1964, one of the longest careers in the early years of Formula One. During this time he also competed in sports car racing, including winning the 1954 24 Hours of Le Mans race. Following his retirement from the track Trintignant concentrated on the wine trade. Maurice Trintignant was the brother of Bugatti race car driver Louis Trintignant — who was killed in 1933, in practice, at Péronne, Picardy — and the uncle of renowned French film actor Jean-Louis Trintignant."
       },
       {
@@ -6764,7 +6764,7 @@
         "dob": "1930-10-07",
         "nationality": "French",
         "url": "http://en.wikipedia.org/wiki/Bernard_Collomb",
-        "teams": "Gordini, Rosier, Ferrari, Vanwall, Bugatti, Rob Walker, Centro Sud, BRM, Aston Martin, Serenissima",
+        "teams": "Rosier, Ferrari, Bugatti, Rob Walker, Aston Martin, Serenissima",
         "description": "Bernard Marie François Alexandre Collomb-Clerc (7 October 1930 in Annecy, Haute-Savoie – 19 September 2011 in La Colle-sur-Loup, Alpes-Maritimes) was a Formula One driver from France. He participated in six World Championship Grands Prix, debuting on 2 July 1961, scoring no championship points."
       },
       {

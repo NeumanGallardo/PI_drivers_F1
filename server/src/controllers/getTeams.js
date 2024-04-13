@@ -10,9 +10,12 @@ for(let i=0;i<response.data.length;i++)
 
 teams = teams.join('');
 teams = teams.split(',');
+
 teams = teams.filter((elemento, indice) => {
     return teams.indexOf(elemento) === indice;
-});
+});  
+
+
 //ordenar teams alfabeticamente
 teams = teams.slice().sort((a, b) => {
     const nombreA = a.toLowerCase(); 

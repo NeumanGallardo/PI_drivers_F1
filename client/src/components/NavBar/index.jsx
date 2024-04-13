@@ -7,14 +7,17 @@ export default function NavBar({handleChange, handleSubmit}){
     const location = useLocation();
 
     return <><header className={style.container}>
-<nav>
-<Link className={style.link} to='/home' onClick={allDrivers}><h2>Home</h2></Link>
-<Link className={style.link} to='/form'><h2>Crear Driver</h2></Link>
+<nav className={style.nav} id='nav'>
+<a href={`/home`} className={style.home}>
+Home
+</a>
+<div><Link className={style.link} to='/home' onClick={allDrivers}>Home</Link></div>
+<div><Link className={style.link} to='/form'>Crear Driver</Link></div>
 {location.pathname === '/home' && 
-<form onChange={event=>handleChange(event)}>
+<div onChange={event=>handleChange(event)}>
 <input placeholder="Buscar" type="search"/>
 <button type="submit" onClick={handleSubmit}>Buscar</button>
-</form>
+</div>
 }
 </nav>
     </header>
