@@ -26,7 +26,7 @@ return <div>{driver?.map((item)=>{return (
               <img src={item.image} alt='foto' className={style.img}/>
               
               <h2>{item.dob}</h2>
-              <h2>{item.teams}</h2>
+              <h2 className={style.team}>{item.teams}</h2>
               <p className={style.description}> {item.description} </p>
               <Link to='/home' ><button>To Home</button></Link>
             </div>

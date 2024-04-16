@@ -13,7 +13,7 @@
     position: relative; 
 
     width: 500px;
-    height: 1100px;
+    height: auto;
     
 }
 .description {
@@ -36,4 +36,7 @@
     margin-left: auto;
     margin-right: auto;
    
+}
+.team {
+    line-height: 1.5; 
 }

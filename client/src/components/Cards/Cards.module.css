@@ -16,3 +16,8 @@
     position:static;
     bottom: 0;
 }
+
+.notFound {
+    font-size: 30px;
+    color: rgb(219, 170, 35);
+}

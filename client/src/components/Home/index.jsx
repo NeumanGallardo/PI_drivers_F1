@@ -18,8 +18,6 @@ setSearchString(event.target.value);}
 
 function handleSubmit(event) {
   event.preventDefault();
-  const elemento = document.getElementById('nav');
-  elemento.style.position = 'flex'; // Cambiar posición
   const id = parseInt(searchString, 10);
   if ( isNaN(id))
   dispatch(getByName(searchString));

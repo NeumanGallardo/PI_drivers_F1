@@ -4,7 +4,7 @@ import Card from '../Card/index';
 import style from './Cards.module.css';
 const Cards = ({allDrivers})=>{
    const driversList = allDrivers;
-   if(driversList.length === 0) return (<p>driver no encontrado</p>);
+   if(driversList.length === 0) return (<p className={style.notFound}>driver no encontrado</p>);
 
    const [currentPage, setCurrentPage] = useState(1);
    const itemsPerPage = 9;

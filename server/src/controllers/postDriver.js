@@ -10,6 +10,7 @@ const response = await axios(`${URL}`);
 //contando datos y asignacion de id
 const count = response.data.length;
 const id = count + 1;
+console.log('nuevo id ',id);
 const {name, lastName, description, image, nationality, dob} = newDriver;
 if(!name || !lastName || !description || !nationality || !dob)  
 {return res.status(400).send('Faltan datos post de driver');}
