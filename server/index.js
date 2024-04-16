@@ -22,7 +22,7 @@ server.use((req, res, next) => {
 server.use(express.json());
 server.use('/drivers_F1',router);
 
-conn.sync({ force: true }).then(() => {
+conn.sync({ force: false }).then(() => {
 server.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 })

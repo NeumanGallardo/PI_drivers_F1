@@ -8,17 +8,12 @@ export default function NavBar({handleChange, handleSubmit}){
 
     return <><header className={style.container}>
 <nav className={style.nav} id='nav'>
-<a href={`/home`} className={style.home}>
-Home
-</a>
-<div><Link className={style.link} to='/home' onClick={allDrivers}>Home</Link></div>
-<div><Link className={style.link} to='/form'>Crear Driver</Link></div>
-{location.pathname === '/home' && 
-<div onChange={event=>handleChange(event)}>
+<div><Link className={style.home} to='/home' onClick={allDrivers}>Home</Link></div>
+<div><Link className={style.newDriver} to='/form'>Crear Driver</Link></div>
+<div onChange={event=>handleChange(event)} className={style.search}>
 <input placeholder="Buscar" type="search"/>
 <button type="submit" onClick={handleSubmit}>Buscar</button>
 </div>
-}
 </nav>
     </header>
     </>

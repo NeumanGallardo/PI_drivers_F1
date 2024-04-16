@@ -23,10 +23,11 @@ return <div>{driver?.map((item)=>{return (
               <h2>{item.name}</h2>
               <h2>{item.lastName}</h2>
               <h2>{item.nationality}</h2>
-              <img src={item.image} alt='foto'/>
-              <h2>{item.description}</h2>
+              <img src={item.image} alt='foto' className={style.img}/>
+              
               <h2>{item.dob}</h2>
               <h2>{item.teams}</h2>
+              <p className={style.description}> {item.description} </p>
               <Link to='/home' ><button>To Home</button></Link>
             </div>
 )})}

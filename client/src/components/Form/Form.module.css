@@ -1,30 +1,27 @@
 .p {
     color: rgb(241, 16, 16);
-    background-color: rgb(244, 244, 10);
-    /* background-color: #ffcc00; /* Fondo amarillo */ 
-    border-radius: 10px; /* Bordes redondeados */
-    margin-bottom: 5px; /* Espaciado inferior */
+     background-color: #ffcc00;
     font-family: cursive;
+
 }  
 
 
 
-.label {
-    /* Estilos generales */
+label {
+
     font-size: 16px; /* Tamaño de fuente */
     /*color: #333; /* Color del texto */
-    font-weight: bold; /* Peso de la fuente */
     color: #555;
     font-weight: bold;
-    margin-bottom: 8px;
+    margin-bottom: 0px;
     transition: color 0.3s ease;
-    background-color: #d459db; /* Cambia el color de fondo */
-    padding: 8px;
+    background-color: #69bfce; /* Cambia el color de fondo */
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Agrega una sombra */
 }
 
 form {
+    width: 60vw;
    
     background-color: #4e54c8; /* Color de fondo */
     background-image: linear-gradient(to right, #8f94fb, #4e54c8); 

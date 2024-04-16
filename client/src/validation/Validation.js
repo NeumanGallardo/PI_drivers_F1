@@ -21,13 +21,6 @@ export default function validation(inputs){
                if (!regex3.test(inputs.lastName)) {
                 errors.lastName = 'Debe tener mas de 3 caracteres'}
             
-            
-            //validacion de imagen
-            const regexImagen = /\.(jpg|jpeg|gif|png|bmp)$/i;
-            
-            if (!regexImagen.test(inputs.image)) {
-                errors.image = 'Debe ser una URL de una imagen'
-            }
         //validation fecha de nacimiento 
         const fechaNacimientoObj = new Date(inputs.dob);
         const fechaActual = new Date();
@@ -42,7 +35,7 @@ if(!inputs.nationality)
 {errors.nationality = 'Seleccione una nacionalidad';}
             
 //validation description
-const regexMasDeTresPalabras = /^(\S+\s+){3,}\S+$/;
+const regexMasDeTresPalabras = /^(\S+\s+){3,}\S+$/i;
 if(!regexMasDeTresPalabras.test(inputs.description))
 {errors.description = 'La descripcion debe ser mas de tres palabras';}
 
@@ -50,8 +43,6 @@ if(!regexMasDeTresPalabras.test(inputs.description))
 const cadenaJSON = JSON.stringify(inputs.teams);
 //const regexJSON = k;
 
-//if(Array.isArray(inputs.teams) && !inputs.teams[0])
-//{errors.teams = 'Selecccione  un team o mas...';}
 
 return errors;
         }

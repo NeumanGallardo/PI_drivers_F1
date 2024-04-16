@@ -27,8 +27,8 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 100vw;
-  min-height: 100vw;
+  min-width: 85vw;
+  min-height: 85vw;
 
   background-color: #9f4ec8; /* Color de fondo */
   background-image: linear-gradient(to right, #7633b5,#1461d4); 

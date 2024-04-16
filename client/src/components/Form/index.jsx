@@ -142,7 +142,7 @@ return <><NavBar/>
     {errors.nationality!==''&&<p className={style.p}>{errors.nationality}</p>}
 
     <label>Imagen: </label> 
-    <input type="text" name='image' value={imagenURL} onChange={handleImagenSeleccionada}/>
+    <input type="text" name='image' value={imagenURL} onChange={handleImagenSeleccionada} placeholder="URL de imagen"/>
     {imagenURL && <img src={imagenURL} alt="Vista previa de la imagen" 
     style={{ maxWidth: '300px', maxHeight: '300px' }} />}
     {errors.image!==''&&<p className={style.p}>{errors.image}</p>}

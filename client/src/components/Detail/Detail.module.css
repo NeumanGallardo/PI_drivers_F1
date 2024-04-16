@@ -1,3 +1,39 @@
 .container{
-    color:rgb(0, 255, 234);
+    color:rgb(16, 23, 22);
+      
+    background-color: #4ec85e; /* Color de fondo */
+    background-image: linear-gradient(to right, #3eb55c, #d93c1c); 
+    display: flex;
+    flex-direction: column;
+
+  
+    border-radius: 30px;
+    padding: 5px;
+    margin: 5px;
+    position: relative; 
+
+    width: 500px;
+    height: 1100px;
+    
+}
+.description {
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;  
+    line-height: 1.5;
+}
+ 
+.img { 
+    width: 400px;
+    height: 500px;
+    border-radius: 30px;
+    padding: 5px;
+    margin: 5px;
+    position:relative; 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+   
 }

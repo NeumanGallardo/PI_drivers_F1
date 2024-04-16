@@ -5,11 +5,11 @@ import { useDispatch, useSelector } from 'react-redux';
 function Card(props) {
    return (
    <div className={style.card}>
-<a href={`/detail/${props.id}`}>
+<a href={`/detail/${props.id}`}>  
 <img src={props.image} alt='foto'/>
-</a>
+</a> 
    <Link to={`/detail/${props.id}`}><h3 className={style.h3}>{props.name}</h3></Link>
-    <p>{props.teams}</p> 
+    <p className={style.p}>{props.teams}</p> 
     </div>
    );
 }
