@@ -1,5 +1,6 @@
 const axios = require('axios');
-const {Driver} = require('../db');
+const {Driver, Team} = require('../db');
+
 const URL='http://localhost:5000/drivers/';
 const getDrivers = async (req, res)=>{
 try{
@@ -30,15 +31,25 @@ module.exports = getDrivers;
 const getDrivesDB =async ()=>{
     let driversDB=[];
     try{
-const DB = await Driver.findAll();
+//const DB = await Driver.findAll({include:{model:Team}});
+
+const DB = await Driver.findAll({include: {model: Team}});
+
 for(let i=0; i<DB.length;i++)
     {
-    let {id, name, lastName, nationality, image, description, dob}=DB[i];
+    let {id, name, lastName, nationality, image, description, dob, Teams}=DB[i];
+    //convirtiendo el array de objetos de Teams a string
+    let teams ='';
+    for(let i=0; i<Teams.length;i++)
+    {if(i<Teams.length-1)
+      {teams = teams + Teams[i].name + ',';}
+    else {teams = teams + Teams[i].name;}}
+
     dob = dob.getFullYear() + '-' + (dob.getMonth() + 1) + '-' + dob.getDate();
     
     if(!image)
 {image = "https://cdn-4.motorsport.com/images/mgl/2Gzrxzo0/s700/sergio-perez-red-bull-racing-1.jpg";}
-    let driverDB = {id, name, lastName, nationality, image, description, dob};
+    let driverDB = {id, name, lastName, nationality, image, description, dob, teams};
     driversDB.push(driverDB);
     }
     return driversDB;

@@ -8,7 +8,7 @@ module.exports = (sequelize) => {
     name: {type: DataTypes.STRING, allowNull: false},
     lastName: {type: DataTypes.STRING, allowNull: false},
     description: {type: DataTypes.STRING, allowNull: false},
-    image:{type: DataTypes.STRING, allowNull: false},
+    image:{type: DataTypes.STRING, allowNull: true},
     nationality:{type: DataTypes.STRING, allowNull: false},
     dob:{type: DataTypes.DATE, allowNull: false}
   }, {timestamps: false});
