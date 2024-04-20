@@ -1,9 +1,16 @@
 import {React, useState, useEffect} from "react";
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
 import validation from '../../validation/Validation';
 import NavBar from "../NavBar";
 import style from './Form.module.css';
+import { getTeams } from "../../redux/actions";
+
 function Form(){
+  const URL = 'http://localhost:3001/drivers_F1/';
+  //action getTeams
+  const dispatch = useDispatch();
+const teamsDB = useSelector((state)=>state.teams);
 
   const arrayNationality = [
         { id: 0, nationality: 'American' },
@@ -43,23 +50,14 @@ function Form(){
         { id: 34, nationality: 'Venezuelan' }
       ]
 
-const [DB, setDB] = useState([]);
-
 const [opNat,setOpNat] = useState([]);
 const [opSelecTeams, setOpSelecTeams] = useState([]);
 const [newDriver,setNewDriver]=useState({});
 const [errors,setErrors]=useState({});
 
 useEffect(() => {
-    async function getDB()
-    {  
-    try{
-        const response = await axios(`http://localhost:3001/drivers_F1_teams`);
-        setDB(response.data);
-    }catch(error){return <p>error al obtener datos {error}</p>}  
-    }
-getDB();
-  }, []);
+dispatch(getTeams());
+  }, [dispatch]);
 
   // Manejar el cambio de las opciones seleccionadas team
   const handleTeamChange = (event) => {
@@ -113,7 +111,7 @@ const postNewDriver = async () => {
         opSelecTeams: opSelecTeams
       };
   
-      const response = await axios.post(`http://localhost:3001/drivers_F1/`, datos);
+      const response = await axios.post(URL, datos);
   console.log('Respuesta del servidor:', response.data);
       window.alert(response.data);
     } catch (error) {
@@ -158,7 +156,7 @@ return <><NavBar/>
 
     <label>Teams: </label> 
     <select multiple name="teams" value={opSelecTeams} onChange={handleTeamChange}>
-    {DB.map((objeto) => (
+    {teamsDB.map((objeto) => (
           <option key={objeto.id} value={objeto.name} id={objeto.id}>
             {objeto.name}
           </option>
