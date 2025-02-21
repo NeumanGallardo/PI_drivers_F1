@@ -1,14 +1,11 @@
 import {React, useState, useEffect} from "react";
-import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import validation from '../../validation/Validation';
 import NavBar from "../NavBar";
 import style from './Form.module.css';
-import { getTeams } from "../../redux/actions";
-import Swal from "sweetalert2";
+import { getTeams, postNewDriver } from "../../redux/actions";
 
 function Form(){
-  const URL = 'http://localhost:3001/drivers_F1/';
   //action getTeams
   const dispatch = useDispatch();
 const teamsDB = useSelector((state)=>state.teams);
@@ -103,32 +100,7 @@ const handleSubmit=(event)=>{
     event.preventDefault();
     postNewDriver(newDriver, opSelecTeams);
 };
-//post del nuevo driver
 
-const postNewDriver = async () => {
-    try {
-      const datos = {
-        newDriver: newDriver,
-        opSelecTeams: opSelecTeams
-      };
-  
-      const response = await axios.post(URL, datos);
-  console.log('Respuesta del servidor:', response.data);
-  Swal.fire({
-    icon: "success",
-    title: response.data,
-    text: "",
-    timer: 5000,
-  });
-    } catch (error) {
-      Swal.fire({
-        icon: "error",
-        title: error.message,
-        text: "",
-        timer: 5000,
-      });
-    }
-  };
 
 return <><NavBar/>
 <form onSubmit={handleSubmit}>
