@@ -5,6 +5,7 @@ import validation from '../../validation/Validation';
 import NavBar from "../NavBar";
 import style from './Form.module.css';
 import { getTeams } from "../../redux/actions";
+import Swal from "sweetalert2";
 
 function Form(){
   const URL = 'http://localhost:3001/drivers_F1/';
@@ -113,9 +114,19 @@ const postNewDriver = async () => {
   
       const response = await axios.post(URL, datos);
   console.log('Respuesta del servidor:', response.data);
-      window.alert(response.data);
+  Swal.fire({
+    icon: "success",
+    title: response.data,
+    text: "",
+    timer: 5000,
+  });
     } catch (error) {
-      window.alert('Error datos no registrados', error.message);
+      Swal.fire({
+        icon: "error",
+        title: error.message,
+        text: "",
+        timer: 5000,
+      });
     }
   };
 
