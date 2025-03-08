@@ -140,7 +140,8 @@ return <><NavBar/>
     {errors.description!==''&&<p className={style.p}>{errors.description}</p>}
 
     <label>Teams: </label> 
-    <Select options={teamsDB} isMulti onChange={(handleTeamChange) => opSelecTeams(handleTeamChange)}/>
+    <Select options={teamsDB} isMulti onChange={(opSelecTeams) => setOpSelecTeams(opSelecTeams)}
+      teamsDB={(e) => e.label}/>
     {/*multiple name="teams" value={opSelecTeams} onChange={handleTeamChange}>
     {teamsDB.map((objeto) => (
           <option key={objeto.id} value={objeto.name} id={objeto.id}>
