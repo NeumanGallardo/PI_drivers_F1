@@ -5,6 +5,8 @@ import NavBar from "../NavBar";
 import style from './Form.module.css';
 import { getTeams, postNewDriver } from "../../redux/actions";
 
+import Select from "react-select";
+
 function Form(){
   //action getTeams
   const dispatch = useDispatch();
@@ -138,13 +140,14 @@ return <><NavBar/>
     {errors.description!==''&&<p className={style.p}>{errors.description}</p>}
 
     <label>Teams: </label> 
-    <select multiple name="teams" value={opSelecTeams} onChange={handleTeamChange}>
+    <Select options={teamsDB} isMulti onChange={(handleTeamChange) => opSelecTeams(handleTeamChange)}/>
+    {/*multiple name="teams" value={opSelecTeams} onChange={handleTeamChange}>
     {teamsDB.map((objeto) => (
           <option key={objeto.id} value={objeto.name} id={objeto.id}>
             {objeto.name}
           </option>
         ))}
-    </select>
+    </Select>*/}
     {errors.teams!==''&&<p className={style.p}>{errors.teams}</p>}
     <div>
         <h3>Opciones seleccionadas:</h3>
